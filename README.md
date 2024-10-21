@@ -77,7 +77,7 @@ Response: Newly created user object.
 
 - **PUT /api/users/{userId}**
 
-Update an existing user.
+Update an existing user. <br>
 Request Body: { "username": "string", "age": number, "hobbies": ["string"] } <br>
 **Note: any field may be missed in request body, old values will be preserved** <br>
 Response: Updated user object, 400 if userId is invalid (not uuid) or 404 if not found.
