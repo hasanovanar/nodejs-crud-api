@@ -30,15 +30,23 @@ export const getUserById = (
 ) => {
   try {
     if (!validateUuid(userId)) {
-      res.statusCode = 400;
-      res.end("Invalid userId");
+      res.statusCode = 400;      
+      res.end(
+        JSON.stringify({
+          message: "Invalid userId",
+        })
+      );
       return;
     }
 
     const user = getUserByIdFromDb(userId);
     if (!user) {
-      res.statusCode = 404;
-      res.end("User not found");
+      res.statusCode = 404;      
+      res.end(
+        JSON.stringify({
+          message: "User not found",
+        })
+      );
       return;
     }
 

@@ -28,6 +28,10 @@ export function handleRequest(req: IncomingMessage, res: ServerResponse) {
     deleteUser(req, res, userId);
   } else {
     res.statusCode = 404;
-    res.end("Not Found");
+    res.end(
+      JSON.stringify({
+        message: "Requested endpoint is not found.",
+      })
+    );
   }
 }
